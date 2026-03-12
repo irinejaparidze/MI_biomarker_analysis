@@ -13,7 +13,7 @@ library(xtable)
 
 ### STEMI - No Damage ROC curves###
 
-DataA <- read.csv("AllGroupsForCardiology.csv")
+DataA <- read.csv("./AllGroupsForCardiology.csv")
 
 DataA
 ################################################
