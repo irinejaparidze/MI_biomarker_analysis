@@ -13,7 +13,7 @@ library(xtable)
 
 ### STEMI - No Damage ROC curves###
 
-DataA <- read.csv("/home/irina/Documents/Bioinformatics/Giorgi Cardiology Docs/AllGroupsForCardiology.csv")
+DataA <- read.csv("AllGroupsForCardiology.csv")
 
 DataA
 ################################################
@@ -143,7 +143,7 @@ stat.test2
 #Saving the results
 
 write_csv(stat.test1, 
-          "/home/irina/Documents/Bioinformatics/Giorgi Cardiology Docs/ROC files/Wilcoxon_STEMI.csv")
+          "Wilcoxon_STEMI.csv")
 
 
 
@@ -193,7 +193,7 @@ stat.test2n
 #Saving the results
 
 write_csv(stat.test1n, 
-          "/home/irina/Documents/Bioinformatics/Giorgi Cardiology Docs/ROC files/Wilcoxon_NSTEMI.csv")
+          "Wilcoxon_NSTEMI.csv")
 
 #########################
 #Wilcpoxon Visualizations
@@ -331,7 +331,7 @@ combined_plot
 ################################
 #Saving plots in high resolution
 ggsave(
-  "/home/irina/Documents/Bioinformatics/Giorgi Cardiology Docs/ROC files/Protein_wilcoxon_comparison.tiff",
+  "Protein_wilcoxon_comparison.tiff",
   combined_plot,
   width = 14,
   height = 10,
@@ -408,7 +408,7 @@ Cutoff_Ubi
 
 #Saving Cutoff data in csv
 
-write.csv(Cutoff_Ubi, '/home/irina/Documents/Bioinformatics/Giorgi Cardiology Docs/ROC files/Cutpoints_ubi_STEMI.csv')
+write.csv(Cutoff_Ubi, 'Cutpoints_ubi_STEMI.csv')
 
 
 
@@ -462,7 +462,7 @@ Cutoff_CX <-  cbind(Cutoff = measureCX$Cutoff, Depth = measureCX$Depth,
                      SPEC = measureCX$SPEC,
                      FSCR = measureCX$FSCR)
 
-write.csv(Cutoff_CX, '/home/irina/Documents/Bioinformatics/Giorgi Cardiology Docs/ROC files/Cutpoints_CXCX4_STEMI.csv')
+write.csv(Cutoff_CX, 'Cutpoints_CXCX4_STEMI.csv')
 
 
 roc_nonparametric_CX <- rocit(score = DataCX$CXCR4ng.ml, 
@@ -501,7 +501,7 @@ Cutoff_SD <-  cbind(Cutoff = measureSD$Cutoff, Depth = measureSD$Depth,
                     SPEC = measureSD$SPEC,
                     FSCR = measureSD$FSCR)
 
-write.csv(Cutoff_SD, '/home/irina/Documents/Bioinformatics/Giorgi Cardiology Docs/ROC files/Cutpoints_SDF1_STEMI.csv')
+write.csv(Cutoff_SD, 'Cutpoints_SDF1_STEMI.csv')
 
 
 roc_nonparametric_SD <- rocit(score = DataSD$SDF1ng.ml, 
@@ -543,7 +543,7 @@ Cutoff_TR <-  cbind(Cutoff = measureTR$Cutoff, Depth = measureTR$Depth,
                     SPEC = measureTR$SPEC,
                     FSCR = measureTR$FSCR)
 
-write.csv(Cutoff_TR, '/home/irina/Documents/Bioinformatics/Giorgi Cardiology Docs/ROC files/Cutpoints_TR_STEMI.csv')
+write.csv(Cutoff_TR, 'Cutpoints_TR_STEMI.csv')
 
 
 roc_nonparametric_TR <- rocit(score = DataTro$Troponing.ml, 
@@ -604,21 +604,21 @@ DataUbia
 
 DataUbia$Health_Status <- ifelse(DataUbia$Diagnosis == 'NSTEMI', '+', '-')
 DataUbia
-write.csv(DataUbia, '/home/irina/Documents/Bioinformatics/Giorgi Cardiology Docs/ROC files/Ubi_Nstemi.csv')
+write.csv(DataUbia, 'Ubi_Nstemi.csv')
 
 
 DataCXa$Health_Status <- ifelse(DataCXa$Diagnosis == 'NSTEMI', '+', '-')
 DataCXa
-write.csv(DataCXa, '/home/irina/Documents/Bioinformatics/Giorgi Cardiology Docs/ROC files/CXCR4_Nstemi.csv')
+write.csv(DataCXa, 'CXCR4_Nstemi.csv')
 
 
 DataSDa$Health_Status <- ifelse(DataSDa$Diagnosis == 'NSTEMI', '+', '-')
 DataSDa
-write.csv(DataSDa, '/home/irina/Documents/Bioinformatics/Giorgi Cardiology Docs/ROC files/SDf_Nstemi.csv')
+write.csv(DataSDa, 'SDf_Nstemi.csv')
 
 DataTroa$Health_Status <- ifelse(DataTroa$Diagnosis == 'NSTEMI', '+', '-')
 DataTroa
-write.csv(DataTroa, '/home/irina/Documents/Bioinformatics/Giorgi Cardiology Docs/ROC files/articleTRO_Nstemi.csv')
+write.csv(DataTroa, 'articleTRO_Nstemi.csv')
 
 
 ####################
@@ -649,7 +649,7 @@ Cutoff_Ubia <-  cbind(Cutoff = measureUBIa$Cutoff, Depth = measureUBIa$Depth,
 
 Cutoff_Ubia 
 
-write.csv(Cutoff_Ubia, '/home/irina/Documents/Bioinformatics/Giorgi Cardiology Docs/ROC files/Cutpoints_ubi_nstemi_1.csv')
+write.csv(Cutoff_Ubia, 'Cutpoints_ubi_nstemi_1.csv')
 
 
 
@@ -708,7 +708,7 @@ Cutoff_CXa <-  cbind(Cutoff = measureCXa$Cutoff, Depth = measureCXa$Depth,
                     SPEC = measureCXa$SPEC,
                     FSCR = measureCXa$FSCR)
 
-write.csv(Cutoff_CXa, '/home/irina/Documents/Bioinformatics/Giorgi Cardiology Docs/ROC files/Cutpoints_CXCR4_nstemi.csv')
+write.csv(Cutoff_CXa, 'Cutpoints_CXCR4_nstemi.csv')
 
 DataCXa
 
@@ -748,7 +748,7 @@ Cutoff_SDa <-  cbind(Cutoff = measureSDa$Cutoff, Depth = measureSDa$Depth,
                     SPEC = measureSDa$SPEC,
                     FSCR = measureSDa$FSCR)
 
-write.csv(Cutoff_SDa, '/home/irina/Documents/Bioinformatics/Giorgi Cardiology Docs/ROC files/Cutpoints_SDF1_Nstemi.csv')
+write.csv(Cutoff_SDa, 'Cutpoints_SDF1_Nstemi.csv')
 
 Cutoff_SDa
 
@@ -794,7 +794,7 @@ Cutoff_TRa <-  cbind(Cutoff = measureTRa$Cutoff, Depth = measureTRa$Depth,
                     SPEC = measureTRa$SPEC,
                     FSCR = measureTRa$FSCR)
 
-write.csv(Cutoff_TRa, '/home/irina/Documents/Bioinformatics/Giorgi Cardiology Docs/ROC files/Cutpoints_TR_NSTEMI.csv')
+write.csv(Cutoff_TRa, 'Cutpoints_TR_NSTEMI.csv')
 
 
 roc_nonparametric_TRa <- rocit(score = DataTroa$Troponing.ml, 
@@ -885,7 +885,7 @@ combined_plot
 
 
 ggsave(
-  "/home/irina/Documents/Bioinformatics/Giorgi Cardiology Docs/ROC files/ROC_Combined.tiff",
+  "ROC_Combined.tiff",
   combined_plot,
   width = 14,
   height = 10,
